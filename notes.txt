@@ -1,0 +1,13 @@
+Datasets Utilized:
+    Labels:
+        MODIS Burned Area (MCD64A1)
+        VIIRS Active Fires (VNP14IMG)
+    Vegetation/Fuel:
+        Sentinel-2 NDVI
+        ESA WorldCover
+    Climate/Drought:
+        ERA5-Land Climate Reanalysis
+        CHIRPS Daily Precipitation
+    Topography:
+        SRTM Digital Elevation Model
+    
