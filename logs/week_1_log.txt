@@ -1,0 +1,44 @@
+# Week 2 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Explore and select datasets for wildfire risk prediction
+and severity analysis using Google Earth Engine.
+
+Datasets:
+    Labels:
+        - MODIS MCD64A1 Burned Area
+        - VIIRS VNP14IMG Active Fires
+    Vegetation/Fuel:
+        - Sentinel-2 NDVI
+        - ESA WorldCover 10m land cover classification
+    Climate/Drought:
+        - ERA5-Land hourly climate data
+        - CHIRPS daily precipitation
+    Topography:
+        - SRTM 30m Digital Elevation Model
+
+Area of Interest and Timeframe:
+    - Bounding box around Dixie Fire footprint in Northern California
+    - June-October 2021 (pre-fire and active fire period)
+
+Summary:
+    - Visualized datasets interactively using geemap in a Jupyter Notebook
+    - Verified MODIS and VIIRS captured the Dixie Fire burn scar and active
+    fire signature
+    - Generated NDVI pre-fire vegetation map and CHIRPS rainfall totals leading
+    up to ignition
+    - Loaded ERA5 temperature data to examine heat anomalies
+    - Retrieved alnd cover and elevation as static featuers
+
+Key Findings:
+    - MODIS burned area data shows clear delineation of Dixie Fire scar, usable
+    for training labels
+    - Sentinel-2 NDVI shows good pre-fire vegetation, useful for fuel modeling
+    - Climate and precipitation data confirm dry pre-fire conditions, usable as 
+    predictive features
+
+Next Steps:
+    - Extract raster data as training samples
+    - Begin feature engineering for predictive model
+    - Define samples for ML training
+
