@@ -1,44 +1,40 @@
-# Week 2 Technical Log #
+# Week 1 Technical Log #
 John Waugh and Nathan Care
 
-Objective: Explore and select datasets for wildfire risk prediction
-and severity analysis using Google Earth Engine.
+Objective: Extend wildfire dataset collection to multiple historical fire events and export raster data for ML training. Downsample large climate and vegetation datasets to avoid request size errors and verify data visually before analysis.
 
 Datasets:
     Labels:
-        - MODIS MCD64A1 Burned Area
-        - VIIRS VNP14IMG Active Fires
+        - MODIS MCD64A1 Burned Area (per fire event)
     Vegetation/Fuel:
-        - Sentinel-2 NDVI
+        - Sentinel-2 NDVI (prefire mean)
         - ESA WorldCover 10m land cover classification
     Climate/Drought:
-        - ERA5-Land hourly climate data
-        - CHIRPS daily precipitation
+        - ERA5-Land hourly temperature, reduced to mean over fire period
+        - CHIRPS daily precipitation, reduced to cumulative total over fire period
     Topography:
         - SRTM 30m Digital Elevation Model
 
-Area of Interest and Timeframe:
-    - Bounding box around Dixie Fire footprint in Northern California
-    - June-October 2021 (pre-fire and active fire period)
+Fire Events and Timeframes:
+    - Dixie Fire, Northern California, 2021-07-13 - 2021-10-25
+    - Camp Fire, California, 2018-11-08 - 2018-11-25
+    - Bear Fire, California, 2020-08-17 - 2020-10-20
+    - North Complex Fire, California, 2020-08-18 - 2020-12-03
+    - Glass Fire, California, 2020-09-27 - 2020-10-20
 
 Summary:
-    - Visualized datasets interactively using geemap in a Jupyter Notebook
-    - Verified MODIS and VIIRS captured the Dixie Fire burn scar and active
-    fire signature
-    - Generated NDVI pre-fire vegetation map and CHIRPS rainfall totals leading
-    up to ignition
-    - Loaded ERA5 temperature data to examine heat anomalies
-    - Retrieved alnd cover and elevation as static featuers
+    - Implemented notebook to loop over multiple fire AOIs and automatically export MODIS, NDVI, landcover, ERA5, CHIRPS, and SRTM data
+    - Downsampled NDVI, ERA5, and CHIRPS to avoid Earth Engine request size limits
+    - Visualized raster outputs for sanity checking using matplotlib and rasterio
+    - Confirmed MODIS burned areas are small but correctly aligned; NDVI and DEM require colormap visualization; ESA WorldCover loaded successfully; CHIRPS and ERA5 reduced successfully to single-band images
 
 Key Findings:
-    - MODIS burned area data shows clear delineation of Dixie Fire scar, usable
-    for training labels
-    - Sentinel-2 NDVI shows good pre-fire vegetation, useful for fuel modeling
-    - Climate and precipitation data confirm dry pre-fire conditions, usable as 
-    predictive features
+    - Multi-fire AOI processing successfully automates dataset export
+    - Downsampling and temporal reduction solves request size issues
+    - Raster outputs ready for preprocessing and ML feature extraction
+    - VIIRS FRP excluded due to empty band issues, can be reconsidered later
 
 Next Steps:
-    - Extract raster data as training samples
-    - Begin feature engineering for predictive model
-    - Define samples for ML training
-
+    - Complete additional data exploration and preprocessing (resampling, stacking, normalization)
+    - Begin feature engineering for predictive ML models (spread prediction, post-fire analysis)
+    - Prepare datasets for Week 2 modeling exercises
