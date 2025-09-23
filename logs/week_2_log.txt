@@ -1,0 +1,38 @@
+# Week 2 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Gather and preprocess data for 5 historical fire events, including vegetation, drought,
+and burn severity indices, and generate clean datasets ready for labeling and modeling.
+
+Tasks Completed:
+    - Selected 5 fire events:
+        - Dixie Fire (2021)
+        - Camp Fire (2018)
+        - Bootleg Fire (2021)
+        - East Troublesome Fire (2020)
+        - Caldor Fire (2021)
+    - Develop preprocessing notebook:
+        - Added function to compute vegetation indices.
+        - Implemented cloud-masked composites for pre-fire imagery.
+        - Computed drought indices and burn severity indexes.
+    - Added visualization function to display exported rasters for quality checking.
+
+Outputs Generated:
+    - Vegetation Indices: NDVI, EVI, NBR per fire (except Bootleg).
+    - VCI and SPI drought metrics for all fires.
+    - dNBR burn severity labels for 4 fires.
+    - Clean, cloud-masked rasters.
+
+Issues and Fixes:
+    - Bootleg Fire dNBR and vegetation indices failed:
+        - Likely due to request size for such a large AOI.
+        - Attempted increasing scale but still exceeded request size limit
+        for dNBR.
+        - Could consider further increasing the scale in the future.
+
+Next Steps:
+    - Finalize labeling function to convert dNBR rasters into severity classes.
+    - Merge all feature layers (vegetation, drought, topography, climate) into a 
+    single multi-band dataset per fire.
+    - Handle Bootleg gap by revisting failed export using a tiling approach.
+
