@@ -1,0 +1,29 @@
+# Week 3 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Finalize dataset for training by cleaning, aligning, and labeling raster data from multiple wildfire events.
+
+Tasks Completed:
+    - Multi-Fire Raster Loading:
+        - Automatically detected fires in data/processed.
+        - Loaded each fire's rasters (veg indices, drought indices, landcover, etc).
+        - Used dNBR raster as reference grid to align all layers.
+    - Cleaning and Masking:
+        - Masked no-data pixels based on dNBR availability.
+        - Dropped rows with NaNs to ensure clean training set.
+        - Verified that features aligned properly.
+    - Label Construuction:
+        - Computed dNBR-based severity classification.
+            - Unburned: dNBR < 0.1
+            - Low: 0.1 ≤ dNBR < 0.27
+            - Moderate: 0.27 ≤ dNBR < 0.44
+            - High: dNBR ≥ 0.44
+    - Exported Datasets:
+        - Saved per-fire parquet files.
+        - Created combined dataset with all fires stacked together for modeling.
+    - Exploratory visualization:
+        - Generated dNBR distribution plots for each fire.
+        - Generated feature correlation heatmap across all features.
+
+Next Steps:
+    - Train baseline classifcation models, evaluate performance.
