@@ -1,0 +1,41 @@
+# Week 4 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Develop initial fire risk classifcation models using the combined dataset
+from multiple fire evetns. Evaluate the baseline model performance and interpret relevance
+of features.
+
+Tasks Completed:
+    - Intergrated combined dataset:
+        - Loaded the preprocessed dataset from multiple fire events.
+        - Verified spatial alignment and consistent variable naming across all datasets.
+        - Constructed a unified file with shared feature columns (dNBR, SPI, VCI, NDVI) and severity labels.
+    - Feature Engineering:
+        - Selected for core predictive features representing vegetation and drought conditions:
+            - dNBR (Differenced Normalized Burn Ratio): burn severity indicator.
+            - NDVI (Normalized Difference Vegetation Index): vegetation greeness and health.
+            - VCI (Vegetation Condition Index): short-term vegetation stress.
+            - SPI (Standardized Precipitation Index): drought and moisture anomaly metric.
+        - Ensured all features were scaled to consistent numeric range.
+    - Model Development:
+        - Trained baseline models to predict burn severity classes (High, Moderate, Low, Unburned):
+            - Logistic Regression: used as a linear baseline for interpretability.
+            - Random Forest Classifier: nonlinear model for capturing vegetation-burn interactions.
+    - Model Evaluation:
+        - Split combined dataset into training (70%) and test (30%) subsets.
+        - Evaluated models using confusion matrices, precision, recall, and AUC.
+        - Observed both modesl achieving high overall accuracy but struggling to classify
+        minority (burned) classes due to strong class imbalance.
+        - Random Forest slighty outperformed Logistic Regression in recall for burned classes.
+    - Feature Insight:
+        - Extracted feature importance from Random Forest:
+            - dNBR performed highly, confirming strong correlation with burn severity.
+            - NDVI, VCI, and SPI showed context-dependent relevance.
+        - Generated feature importance bar plots and confusion matrix visualizations for both models.
+    - Saved baseline model metrics for future comparison.
+
+Next Steps:
+    - Address class imbalance issue somehow.
+    - Introduce topographic features (slope, etc).
+    - Train more advanced models (CNNs) for improved burned area detection.
+    - Possibly add more fire events to combined dataset for better training.
