@@ -38,4 +38,4 @@ Next Steps:
     - Address class imbalance issue somehow.
     - Introduce topographic features (slope, etc).
     - Train more advanced models (CNNs) for improved burned area detection.
-    - Possibly add more fire events to combined dataset for better training.
+    - Possibly add more fire events to combined dataset for better training. 
