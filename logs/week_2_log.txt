@@ -11,6 +11,11 @@ Tasks Completed:
         - Bootleg Fire (2021)
         - East Troublesome Fire (2020)
         - Caldor Fire (2021)
+        - Carr Fire (2018)
+        - Thomas Fire (2017)
+        - Creek Fire (2020)
+        - Woolsey Fire (2018)
+        - Glass Fire (2020)
     - Develop preprocessing notebook:
         - Added function to compute vegetation indices.
         - Implemented cloud-masked composites for pre-fire imagery.

@@ -1,7 +1,8 @@
 # Week 1 Technical Log #
 John Waugh and Nathan Care
 
-Objective: Extend wildfire dataset collection to multiple historical fire events and export raster data for ML training. Downsample large climate and vegetation datasets to avoid request size errors and verify data visually before analysis.
+Objective: Extend wildfire dataset collection to multiple historical fire events and export raster data for ML training. 
+Downsample large climate and vegetation datasets to avoid request size errors and verify data visually before analysis.
 
 Datasets:
     Labels:
@@ -21,6 +22,11 @@ Fire Events and Timeframes:
     - Bootleg Fire, Oregon, 2021-07-01 - 2021-08-31
     - Caldor Fire, California, 2021-08-01 - 2021-10-01
     - East Troublesome Fire, Colorado, 2020-10-01 - 2020-11-15
+    - Carr Fire, California, 2018-07-23 – 2018-09-04
+    - Thomas Fire, California, 2017-12-04 – 2018-01-12
+    - Creek Fire, California, 2020-09-04 – 2020-12-24
+    - Woolsey Fire, California, 2018-11-08 – 2018-11-21
+    - Glass Fire, California, 2020-09-27 – 2020-10-20
 
 Summary:
     - Implemented notebook to loop over multiple fire AOIs and automatically export MODIS, NDVI, landcover, ERA5, CHIRPS, and SRTM data
