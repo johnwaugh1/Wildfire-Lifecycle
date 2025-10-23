@@ -1,0 +1,38 @@
+# Week 5 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Develop and evaluate an advanced deep learning model (CNN) for burn severity classification using
+the combined multi-event dataset. Compare CNN performance against baseline models (Logistic Regression and Random Forest) 
+and address dataset imbalance.
+
+Tasks Completed:
+    - Dataset Integration and Prep:
+        - Utilized the expanded combined dataset containing additional historical fire events for improved generalization.
+        - Verified consistency in feature naming and burn severity labeling across all merged fire events.
+        - Encoded categorical burn severity labels (High, Moderate, Low, Unburned) for model compatibility.
+        - Standardized all continuous input features (dNBR, SPI, VCI, NDVI) to ensure uniform scaling.
+    - Feature Engineering:
+        - Retained the same core environmental indicators as Week 4 to maintain consistency in model comparison:
+            - dNBR (Differenced Normalized Burn Ratio): burn severity indicator.
+            - NDVI (Normalized Difference Vegetation Index): vegetation greeness and health.
+            - VCI (Vegetation Condition Index): short-term vegetation stress.
+            - SPI (Standardized Precipitation Index): drought and moisture anomaly metric.
+        - Reshaped features for CNN compatibility, treating each sample as a 1D input vector representing multi-spectral conditions.
+    - Model Development:
+        - Split dataset into training (70%) and test (30%) subsets with stratified sampling to preserve class ratios.
+        - Evaluated CNN model using:
+            - Confusion matrix, classification report, and ROC-AUC for multi-class performance.
+        - Compared CNN test accuracy and macro AUC against Week 4 baseline models.
+        - The CNN achieved comparable overall accuracy but showed improved sensitivity for minority (burned) 
+        classes, indicating better recognition of rare severe burn areas.
+    - Model Comparison and Analysis:
+        - Compiled and visualized results alongside Logistic Regression and Random Forest models.
+        - Observed that:
+            - The CNN model captured more nuanced relationships among drought, vegetation, and burn severity indicators.
+            - Baseline models remained strong for general classification but less effective for distinguishing moderate to high severity pixels.
+        - Exported model metrics to a structured results file for ongoing project tracking and future evaluation.
+
+Next Steps:
+    - Visualize model outputs as risk probability maps
+    - Overlay results on satellite basemaps
+    - Compare predicted "high-risk" zones with historical fire perimeters.
