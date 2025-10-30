@@ -5,14 +5,14 @@ Objective: Visualize and evaluate fire risk predictions from baseline and CNN mo
 Compare predicted high-risk zones with actual burned areas to assess model performance spatially.
 
 Tasks Completed:
-    - Interactive Visualization Pipeline
+    - Interactive Visualization Pipeline:
         - Developed an interactive Folium-based map interface.
         - Added dropdown and toggle controls to dynamically:
             - Select a specific fire event
             - Compare predicted fire risk maps from Logistic Regression, Random Forest and CNN models at the same time.
         - Overlaid model predictions as color-coded probability layers.
         - Included ground-truth burned area boundaries for direct spatial comparison with predicted risk zones.
-    - Model Peformance Insights
+    - Model Peformance Insights:
         - Observed that CNN model outputs provided smoother spatial gradients and more defined burned area delineations.
         - Random Forest and Logistic Regression exhibited higher false-positive zones, especially around transitional vegetation types.
 

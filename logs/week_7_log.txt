@@ -1,0 +1,29 @@
+# Week 7 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Automate the extraction of geospatial features from Google Earth Engine (GEE) for the 10 selected historical fire events.
+Prepare raw datasets for fire spread modeling by collecting environmental and terrain-based predictors.
+
+Tasks Completed:
+    - Automated GEE Data Collection:
+        - Configured authenticated Earth Engine access for Python-based script execution.
+        - Retrieved multi-source environmental and terrain datasets for each fire, including:
+            - MODIS and VIIRS burned area composites
+            - ERA5 reanalysis data (wind speed, direction, temperature, humidity)
+            - SRTM digital elevation and derived slope/aspect layers
+            - MODIS vegetation indices (NDVI, EVI, and vegetation dryness proxies)
+        - Implemented a local data export pipeline saving each fire’s dataset to:
+        data/raw/spread/<fire_name>/
+    - Error Handling and Data Validation:
+        - Added automatic bounding-box correction for unbounded geometries to prevent export errors.
+        - Validated area of interest (AOI) integrity for all 10 fires to ensure consistent spatial
+        resolution and coverage.
+        - Ensured all datasets were clipped and aligned to their respective burned area extents.
+    - Dataset Consistency:
+        - Standardized spatial and temporal ranges across datasets.
+        - Confirmed each fire's folder includes identical variable sets for easier preprocessing.
+
+Next Steps:
+    - Begin preprocessing and feature engineering to create Day N → Day N+1 labeled fire spread datasets.
+    - Compute spatial and temporal alignment of features (e.g., wind direction vs. fire front movement).
+    - Prepare model-ready tensors for CNN-based spread prediction and temporal sequence learning.
