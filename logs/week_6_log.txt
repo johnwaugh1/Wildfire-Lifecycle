@@ -1,0 +1,26 @@
+# Week 6 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Visualize and evaluate fire risk predictions from baseline and CNN models by creating interactive risk probability maps. 
+Compare predicted high-risk zones with actual burned areas to assess model performance spatially.
+
+Tasks Completed:
+    - Interactive Visualization Pipeline
+        - Developed an interactive Folium-based map interface.
+        - Added dropdown and toggle controls to dynamically:
+            - Select a specific fire event
+            - Compare predicted fire risk maps from Logistic Regression, Random Forest and CNN models at the same time.
+        - Overlaid model predictions as color-coded probability layers.
+        - Included ground-truth burned area boundaries for direct spatial comparison with predicted risk zones.
+    - Model Peformance Insights
+        - Observed that CNN model outputs provided smoother spatial gradients and more defined burned area delineations.
+        - Random Forest and Logistic Regression exhibited higher false-positive zones, especially around transitional vegetation types.
+
+Next Steps:
+    - Use the same 10 fire events to extract addition predictive features like:
+        - Wind speed/direction
+        - Topography
+        - Fuel type and vegetation dryness indices
+    - Build a labeled dataset for spread modeling:
+        - Predict fire area at Day N + 1 from conditions and spread at Day N.
+    - Begin designing and comparing spread prediction models.
