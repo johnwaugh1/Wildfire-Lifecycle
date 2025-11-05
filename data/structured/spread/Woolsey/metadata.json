@@ -1,0 +1,25 @@
+{
+  "fire": "Woolsey",
+  "input_shape": [
+    501,
+    605,
+    5
+  ],
+  "target_shape": [
+    501,
+    605
+  ],
+  "is_temporal": false,
+  "patch_size": 64,
+  "overlap": 0,
+  "min_burned_pixels_per_patch": 1,
+  "num_patches": 25,
+  "patch_shape": [
+    64,
+    64,
+    5
+  ],
+  "channels": 5,
+  "cnn_tensors_path": "..\\data\\structured\\spread\\Woolsey\\cnn_patches.npz",
+  "tabular_path": "..\\data\\structured\\spread\\Woolsey\\tabular_patches.pkl"
+}
