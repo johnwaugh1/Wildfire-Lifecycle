@@ -1,0 +1,26 @@
+# Week 8 Technical Log #
+John Waugh and Nathan Care
+
+Objective: Preprocess raw fire spread raster datasets into standardized, model-ready feature arrays for all 10 historical fire events.
+Ensure spatial alignment, normalization, and encoding of key environmental and topographic predictors.
+
+Tasks Completed:
+    - Data Loading and Alignment:
+        - Loaded raw GeoTIFF layers for each fire event from data/raw/spread/<fire_name>/.
+        - Defined the burned area layer as the spatial reference for alignment.
+    - Feature Normalization and Encoding:
+        - Normalized continuous variables (NDVI, temperature, precipitation, elevation) using min–max scaling.
+        - Encoded categorical land cover data into integer classes for machine learning compatibility.
+        - Masked invalid or missing values and enforced consistent feature dimensions across all fires.
+    - Dataset Construction:
+        - Combined aligned rasters into multi-band NumPy feature arrays (features.npy) and corresponding burned area label arrays (target.npy).
+        - Exported each processed dataset to data/processed/spread/<fire_name>/.
+        - Generated raster stacks (stacked_features.tif) for visual validation and spatial QA.
+    - Quality Control and Visualization:
+        - Added a final visual check displaying NDVI, elevation, and burned area overlays to verify proper alignment.
+        - Logged summary statistics on valid pixel coverage and feature completeness for each fire event.
+
+Next Steps:
+    - Begin temporal labeling of burned areas (Day N → Day N+1) for spread prediction model training.
+    - Possibly integrate dynamic variables (wind speed, direction) into the processed dataset for enhanced fire spread modeling.
+    - Train models eventually.
