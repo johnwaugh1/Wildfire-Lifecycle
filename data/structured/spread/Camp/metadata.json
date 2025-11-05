@@ -1,0 +1,25 @@
+{
+  "fire": "Camp",
+  "input_shape": [
+    501,
+    652,
+    5
+  ],
+  "target_shape": [
+    501,
+    652
+  ],
+  "is_temporal": false,
+  "patch_size": 64,
+  "overlap": 0,
+  "min_burned_pixels_per_patch": 1,
+  "num_patches": 30,
+  "patch_shape": [
+    64,
+    64,
+    5
+  ],
+  "channels": 5,
+  "cnn_tensors_path": "..\\data\\structured\\spread\\Camp\\cnn_patches.npz",
+  "tabular_path": "..\\data\\structured\\spread\\Camp\\tabular_patches.pkl"
+}
