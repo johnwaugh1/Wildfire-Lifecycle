@@ -1,1 +1,1 @@
-# Wildfire-Lifecycle
+# Burn Severity Classification
